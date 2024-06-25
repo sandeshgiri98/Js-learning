@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .abc,
+    #bca {
+      color: red;
+    }
+
+    .cartwala{
+      background-color: greenyellow;
+      height: 30px;
+      width: 100px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .cartwala:hover{
+      background-color: rgba(81, 135, 0, 0.742);
+      height: 30px;
+      width: 100px;
+
+    }
+    .wishlistwala{
+      background-color: white;
+      height: 30px;
+      width: 100px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+  </style>
+  <body>   <br>
+
+    <button class="cartwala" onclick="cardquantity++;  document.querySelector('#abcdef').
+      innerText =  `your bag has ${cardquantity} items`; ">Add to Cart</button>
+
+
+    <button class="wishlistwala" onclick="cardquantity--; document.querySelector('#abcdef').
+      innerText =  `your bag has ${cardquantity} items`;"><i class="fa-solid fa-heart" style="color: red;"></i> Wishlist</button>
+    <button class="cartwala" onclick="Jptfunction()">Add 1+1 item</button>
+
+    <h1 id="abcdef"></h1>
+
+    <script>
+      let cardquantity = 10;
+      document.querySelector('#abcdef').
+      innerText =  `your bag has ${cardquantity} items`;
+    </script>
+</body>
+</html>
