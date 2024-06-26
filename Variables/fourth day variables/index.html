@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+  <button id="addcart" onclick="cardquantity += 1;
+  document.querySelector('#added').innerText=`your card has ${cardquantity} items.`;
+  ">
+    Add to cart
+  </button>
+
+  <button id="removefromcart" onclick="cardquantity -= 1;
+  document.querySelector('#added').innerHTML=`your card has ${cardquantity} items.`;
+  ">
+    Move to wishlist
+  </button>
+
+  <button id="Addtwo" onclick="cardquantity += 2;
+  document.querySelector('#added').innerText=`your card has ${cardquantity} items.`;">Add 1+1 item</button>
+
+  <h1 id="added"></h1>
+  <script>
+    let cardquantity = 0;
+        document.querySelector('#added').innerText=`your card has ${cardquantity} items.`;
+        document.querySelector('#added').innerHTML=`your card has ${cardquantity} items.`;
+        
+  </script>
+   -->
+
+   <!-- shortcut -->
+    <button id="addcart" onclick="updateCart(1)">Add to Cart</button>
+    <button id="removefromcart" onclick="updateCart(-1)">Move to Wishlist</button>
+    <button id="Addtwo" onclick="updateCart(2)">Add 1+1 item</button>
+
+    <h1 id="added"></h1>
+
+
+    <script>
+      let cardquantity = 0;
+
+      function updateCart(change){
+        cardquantity += change;
+
+        document.querySelector('#added').innerText = `Your cart has ${cardquantity} items. `;
+        updateCart(0);
+      }
+    </script>
+  
+</body>
+</html>
