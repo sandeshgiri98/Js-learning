@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="calculator.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="calculator">
+      <input type="text" id="display" class="display" readonly />
+
+      <div class="button-container">
+        <button class="button" onclick="clearvalue()">C</button>
+        <button class="button" onclick="updateButton(1)">1</button>
+        <button class="button" onclick="updateButton(2)">2</button>
+        <button class="button" onclick="updateButton(3)">3</button>
+        <button class="button" onclick="updateButton(4)">4</button>
+        <button class="button" onclick="updateButton(5)">5</button>
+        <button class="button" onclick="updateButton(6)">6</button>
+        <button class="button" onclick="updateButton(7)">7</button>
+        <button class="button" onclick="updateButton(8)">8</button>
+        <button class="button" onclick="updateButton(9)">9</button>
+        <button class="button" onclick="updateButton(0)">0</button>
+        <button class="button" onclick="andoperator('+')">+</button>
+        <button class="button" onclick="andoperator('-')">-</button>
+        <button class="button" onclick="calculate()">=</button>
+        <button class="button" onclick="andoperator('*')">*</button>
+      </div>
+    </div>
+    <script>
+      let changevalue = "";
+
+      function updateButton(change) {
+        changevalue += change;
+        document.querySelector("#display").value = changevalue;
+      }
+      function clearvalue(){
+        changevalue = '';
+        document.querySelector('#display').value = changevalue;
+      }
+
+      function andoperator(operator){
+        changevalue += '' + operator + '';
+        document.querySelector('#display').value = changevalue;
+      }
+
+
+      function calculate(){
+        try{
+          changevalue = eval(changevalue);
+          document.querySelector('#display').value = changevalue;
+
+        }
+        catch(error){
+          changevalue = 'Error';
+          document.querySelector('#display').value = changevalue;
+        }
+      }
+    
+      
+
+    </script>
+  </body>
+</html>
